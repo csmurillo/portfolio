@@ -7,5 +7,5 @@ export default () => (
 );
 
 const Title = styled.h1`
-  color: red;
+  color: blue;
 `;
