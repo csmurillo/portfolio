@@ -1,20 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { AiOutlineSearch, AiFillGithub, AiOutlineMenu } from "react-icons/ai";
 import Menu from './Header/Menu';
 
 const Header = ()=>{
+    const [activeMenu,setActiveMenu]=useState(false);
+
+    const clickMenu = ()=>{
+        setActiveMenu(!activeMenu);
+    };
     return(
         <HeaderContainer>
             <MenuContainer className='align-right'>
-                <MenuButton className='center'>
+                <MenuButton className='center' onClick={clickMenu}>
                     <AiOutlineMenu></AiOutlineMenu>
                 </MenuButton>
             </MenuContainer>
-            <MobileNavContaianer>
+            <MobileNavContainer  active={activeMenu}>
                 <MobileNav></MobileNav>
-            </MobileNavContaianer>
-            <Nav className='align-right'>
+            </MobileNavContainer>
+            <NavContainer className='align-right'>
                 <List>
                     <ListItem>
                         <SearchIconContainer>
@@ -33,7 +38,7 @@ const Header = ()=>{
                         </p>
                     </ListItem>
                 </List>
-            </Nav>
+            </NavContainer>
         </HeaderContainer>
     );
 };
@@ -56,8 +61,11 @@ const MenuButton= styled.button`
     color: inherit;
     border: none;
 `;
-const MobileNavContaianer = styled.nav`
-
+const MobileNavContainer = styled.nav`
+display: ${props => props.active ? 'flex':'none'};
+@media (min-width: 768px) {
+    display:none!important;
+}
 `;
 const MobileNav = styled.div`
 position:absolute;
@@ -66,7 +74,7 @@ z-index:-1;
 width:100%; height:100%;
 background-color:blue;
 `;
-const Nav =styled.nav`
+const NavContainer =styled.nav`
     display:none !important;
     @media (min-width: 768px) {
         display:flex!important;

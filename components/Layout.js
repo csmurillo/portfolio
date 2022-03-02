@@ -1,12 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
+import Header from './Header';
 
 const Layout = ({children})=>{
     return(
-        <div>
+        <LayoutContainer>
+            <Header></Header>
             {children}
-        </div>
+        </LayoutContainer>
     );
 };
+const LayoutContainer = styled.div`
+    // background-image:url();
+`;
 
 export default Layout;
