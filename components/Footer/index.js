@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Footer = ({children})=>{
+const Footer = ()=>{
     return(
         <div>
-            {children}
+            Footer
         </div>
     );
 };
