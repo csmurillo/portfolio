@@ -18,7 +18,7 @@ const Layout = ({children})=>{
             </Wrap>
             <About></About>
             <Projects></Projects>
-            <Resume></Resume>
+            {/* <Resume></Resume> */}
             <Contact></Contact>
             <Footer></Footer>
         </LayoutContainer>
@@ -35,7 +35,7 @@ const LayoutContainer = styled.div`
     min-height:650px;
     // border: 1px solid red;
     // background-image:url('/images/portfolio-background.jpg');
-    background-image:url('/images/portfolio-background-2.jpg');
+    background-image:url('./images/portfolio-background-2.jpg');
     background-size: cover;
     background-position:center;
     @media (max-width: 768px) {

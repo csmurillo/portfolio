@@ -16,6 +16,10 @@ html,body{
     padding-right:50px;
     /* background-color: rgb(30, 30, 46); */
 }
+.section-container{
+    padding-left:10%;
+    padding-right:10%;
+}
 .center{
     display: flex;
     justify-content: center;
