@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@300;400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Smooch+Sans&display=swap');
 html,body{
@@ -16,10 +17,10 @@ html,body{
     padding-right:50px;
     /* background-color: rgb(30, 30, 46); */
 }
-.section-container{
+/* .section-container{
     padding-left:10%;
     padding-right:10%;
-}
+} */
 .center{
     display: flex;
     justify-content: center;
@@ -43,3 +44,19 @@ html,body{
         transform: translateY(8px);
     }
 }
+.section-container{
+    padding-left: 10%;
+    padding-right:10%;
+}
+    @media (min-width: 600px){
+        .section-container{
+            padding-left: 5%;
+            padding-right:5%;
+        }
+    }
+    @media (min-width: 1000px){
+        .section-container{
+            padding-left: 5%;
+            padding-right:5%;
+        }
+    }

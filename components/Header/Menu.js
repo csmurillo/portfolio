@@ -5,6 +5,12 @@ import { IoClose } from "react-icons/io5";
 
 import styles from './menu.module.css'
 
+import {MdOutlineContactMail} from "react-icons/md";
+import {HiOutlineDocumentText} from "react-icons/hi";
+import {IoHomeOutline,IoBriefcaseOutline} from "react-icons/io5";
+import {SiAboutdotme} from "react-icons/si";
+
+
 const Menu = ()=>{
     const [activeMenu,setActiveMenu]=useState(false);
 
@@ -21,18 +27,41 @@ const Menu = ()=>{
             </MenuContainer>
             <MobileNavContainer  active={activeMenu}>
                 <MobileNav>
+                    <MobileNavTitleContainer>
+                        <MobileNavTitle className='center'>
+                            Portfolio
+                        </MobileNavTitle>
+                    </MobileNavTitleContainer>
                     <NavContainer>
                         <List>
-                            <ListItem>Search</ListItem>
+                            <ListItem className='center'>
+                                <IoHomeOutline></IoHomeOutline>
+                                <span>Home</span>
+                            </ListItem>
                         </List>
                         <List>
-                            <ListItem>Projects</ListItem>
+                            <ListItem className='center'>
+                                <SiAboutdotme></SiAboutdotme>
+                                <span>About</span>
+                            </ListItem>
                         </List>
                         <List>
-                            <ListItem>Resume</ListItem>
+                            <ListItem className='center'>
+                                <IoBriefcaseOutline></IoBriefcaseOutline>
+                                <span>Projects</span>
+                            </ListItem>
                         </List>
                         <List>
-                            <ListItem></ListItem>
+                            <ListItem className='center'>
+                                <HiOutlineDocumentText></HiOutlineDocumentText>
+                                <span>Resume</span>
+                            </ListItem>
+                        </List>
+                        <List>
+                            <ListItem className='center'>
+                                <MdOutlineContactMail></MdOutlineContactMail>
+                                <span>Contact</span>
+                            </ListItem>
                         </List>
                     </NavContainer>
                 </MobileNav>
@@ -75,13 +104,36 @@ const MobileNav = styled.div`
     width:100%;
     background-color: rgb(0, 0, 43);
 `;
+const MobileNavTitleContainer=styled.div`
+border-bottom:1px solid white;
+`;
+const MobileNavTitle=styled.h1`
+
+`;
 const NavContainer=styled.nav`
 display:flex;
 flex-direction:column;
 `;
 const List=styled.ul`
+list-style-type: none;
+padding:0px;
+margin:0px;
 `;
 const ListItem=styled.li`
+width:100%;
+padding-top:20px;
+padding-bottom:20px;
+margin:0px;
+    &:hover{
+        cursor:pointer;
+        text-decoration:underline;
+        & span{
+            
+        }
+    }
+    & span{
+        margin-left:10px;
+    }
 `;
 export default Menu;
 

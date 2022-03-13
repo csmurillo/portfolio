@@ -12,64 +12,72 @@ import {ReactComponent as HerokuLogo} from '../../../../public/images/programmin
 import {ReactComponent as BootstrapLogo} from '../../../../public/images/programminglogos/bootstrap.svg';
 
 const Skills = ()=>{
-    const [iconHeight,setIconHeight]=useState(50);
-    const [iconWidth,setIconWidth]=useState(50);
+    const [iconHeight,setIconHeight]=useState(35);
+    const [iconWidth,setIconWidth]=useState(35);
 
     return (
-        <SkillsContainer className='section-container'>
-            <SkillsTitleContainer>
-                <SkillsTitle>Technogies</SkillsTitle>
-            </SkillsTitleContainer>
-            <SkillsIconsContainer className='center'>
-                <SkillMessage></SkillMessage>
-                <SkillContainer>
-                    <SkillHtmlSvg iconWidth={iconWidth} iconHeight={iconHeight}></SkillHtmlSvg>
-                </SkillContainer>
-                <SkillContainer>
-                    <SkillCssSvg iconWidth={iconWidth} iconHeight={iconHeight}></SkillCssSvg>
-                </SkillContainer>
-                <SkillContainer>
-                    <SkillJsSvg iconWidth={iconWidth} iconHeight={iconHeight}></SkillJsSvg>
-                </SkillContainer>
-                <SkillContainer>
-                    <SkillNextSvg iconWidth={iconWidth} iconHeight={iconHeight}></SkillNextSvg>
-                </SkillContainer>
-                <SkillContainer>
-                    <SkillReactSvg iconWidth={iconWidth} iconHeight={iconHeight}></SkillReactSvg>
-                </SkillContainer>
-                <SkillContainer>
-                    <SkillNodeSvg iconWidth={iconWidth} iconHeight={iconHeight}></SkillNodeSvg>
-                </SkillContainer>
-                <SkillContainer>
-                    <SkillExpressSvg iconWidth={iconWidth} iconHeight={iconHeight}></SkillExpressSvg>
-                </SkillContainer>
-                <SkillContainer>
-                    <SkillSocketSvg iconWidth={iconWidth} iconHeight={iconHeight}></SkillSocketSvg>
-                </SkillContainer>
-                <SkillContainer>
-                    <SkillHerokuSvg iconWidth={iconWidth} iconHeight={iconHeight}></SkillHerokuSvg>
-                </SkillContainer>
-                <SkillContainer>
-                    <SkillBootstrapSvg iconWidth={iconWidth} iconHeight={iconHeight}></SkillBootstrapSvg>
-                </SkillContainer>
-            </SkillsIconsContainer>
+        <SkillsContainer className='subsection-container'>
+            <SkillsWrapper>
+                <SkillsTitleContainer>
+                    <SkillsTitle>SKILLS</SkillsTitle>
+                </SkillsTitleContainer>
+                <SkillsIconsContainer>
+                    <SkillMessage></SkillMessage>
+                    <SkillContainer>
+                        <SkillHtmlSvg iconWidth={iconWidth} iconHeight={iconHeight}></SkillHtmlSvg>
+                    </SkillContainer>
+                    <SkillContainer>
+                        <SkillCssSvg iconWidth={iconWidth} iconHeight={iconHeight}></SkillCssSvg>
+                    </SkillContainer>
+                    <SkillContainer>
+                        <SkillJsSvg iconWidth={iconWidth} iconHeight={iconHeight}></SkillJsSvg>
+                    </SkillContainer>
+                    <SkillContainer>
+                        <SkillNextSvg iconWidth={iconWidth} iconHeight={iconHeight}></SkillNextSvg>
+                    </SkillContainer>
+                    <SkillContainer>
+                        <SkillReactSvg iconWidth={iconWidth} iconHeight={iconHeight}></SkillReactSvg>
+                    </SkillContainer>
+                    <SkillContainer>
+                        <SkillNodeSvg iconWidth={iconWidth} iconHeight={iconHeight}></SkillNodeSvg>
+                    </SkillContainer>
+                    <SkillContainer>
+                        <SkillExpressSvg iconWidth={iconWidth} iconHeight={iconHeight}></SkillExpressSvg>
+                    </SkillContainer>
+                    <SkillContainer>
+                        <SkillSocketSvg iconWidth={iconWidth} iconHeight={iconHeight}></SkillSocketSvg>
+                    </SkillContainer>
+                    <SkillContainer>
+                        <SkillHerokuSvg iconWidth={iconWidth} iconHeight={iconHeight}></SkillHerokuSvg>
+                    </SkillContainer>
+                    <SkillContainer>
+                        <SkillBootstrapSvg iconWidth={iconWidth} iconHeight={iconHeight}></SkillBootstrapSvg>
+                    </SkillContainer>
+                </SkillsIconsContainer>
+            </SkillsWrapper>
         </SkillsContainer>
     );
 };
 
 
 const SkillsContainer = styled.section`
+grid-area:Skills;
+@media (min-width: 1000px){
+    padding-left:10%;
+    padding-right:10%;
+}
 `;
+const SkillsWrapper = styled.div``;
 const SkillsTitleContainer=styled.div``;
 const SkillsTitle=styled.h2`
-    font-size:1.5em;
+    font-size:1.1em;
     text-decoration:underline;
 `;
 const SkillsIconsContainer = styled.div`
 position:relative;
 display:flex;
 flex-wrap: wrap;
-width:400px;
+// width:400px;
 // @media 
 `;
 // skills

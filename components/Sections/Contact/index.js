@@ -54,7 +54,7 @@ const Contact = ()=>{
 
 const ContactContainer = styled.section`
 height:100%;
-background-image:url('./images/background-zz.jpg');
+background-image:url('./images/portfolio-background-2-flip.jpg');
     background-size: cover;
     background-position:center;
 `;

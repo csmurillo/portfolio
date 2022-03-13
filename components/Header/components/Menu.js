@@ -23,16 +23,16 @@ const Menu = ()=>{
                 <MobileNav>
                     <NavContainer>
                         <List>
-                            <ListItem>Search</ListItem>
+                            <ListItem className='center'>Search</ListItem>
                         </List>
                         <List>
-                            <ListItem>Projects</ListItem>
+                            <ListItem className='center'>Projects</ListItem>
                         </List>
                         <List>
-                            <ListItem>Resume</ListItem>
+                            <ListItem className='center'>Resume</ListItem>
                         </List>
                         <List>
-                            <ListItem></ListItem>
+                            <ListItem className='center'></ListItem>
                         </List>
                     </NavContainer>
                 </MobileNav>
@@ -80,8 +80,11 @@ display:flex;
 flex-direction:column;
 `;
 const List=styled.ul`
+list-style-type: none;
 `;
 const ListItem=styled.li`
+width:100%;
+list-style-type: none;
 `;
 export default Menu;
 
