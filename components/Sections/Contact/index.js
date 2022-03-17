@@ -64,7 +64,6 @@ const ContactTitle = styled.h1`
 color:white;
 font-size:2.5em;`;
 const ContactFormContainer = styled.div`
-// background-color:blue;
 padding-left:10%;
 padding-right:10%;
 @media (min-width: 768px){
@@ -74,7 +73,6 @@ padding-right:10%;
 `;
 
 const ContactForm = styled.form`
-// background-color:red;
 color:white;
 width:100%;
 `;

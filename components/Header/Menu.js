@@ -9,13 +9,17 @@ import {MdOutlineContactMail} from "react-icons/md";
 import {HiOutlineDocumentText} from "react-icons/hi";
 import {IoHomeOutline,IoBriefcaseOutline} from "react-icons/io5";
 import {SiAboutdotme} from "react-icons/si";
-
+import Link from 'next/link';
 
 const Menu = ()=>{
     const [activeMenu,setActiveMenu]=useState(false);
 
     const clickMenu = ()=>{
         setActiveMenu(!activeMenu);
+    };
+    const closeMenu = ()=>{
+        console.log('close menu');
+        setActiveMenu(false);
     };
     return(
         <>
@@ -34,33 +38,53 @@ const Menu = ()=>{
                     </MobileNavTitleContainer>
                     <NavContainer>
                         <List>
-                            <ListItem className='center'>
-                                <IoHomeOutline></IoHomeOutline>
-                                <span>Home</span>
+                            <ListItem className='center' onClick={closeMenu}>
+                                <Link href="#home">
+                                    <AnchorTag>
+                                        <IoHomeOutline></IoHomeOutline>
+                                        <span>Home</span>
+                                    </AnchorTag>
+                                </Link>
                             </ListItem>
                         </List>
                         <List>
-                            <ListItem className='center'>
-                                <SiAboutdotme></SiAboutdotme>
-                                <span>About</span>
+                            <ListItem className='center' onClick={closeMenu}>
+                                <Link href="#about">
+                                    <AnchorTag>
+                                        <SiAboutdotme></SiAboutdotme>
+                                        <span>Abouts</span>
+                                    </AnchorTag>
+                                </Link>
                             </ListItem>
                         </List>
                         <List>
-                            <ListItem className='center'>
-                                <IoBriefcaseOutline></IoBriefcaseOutline>
-                                <span>Projects</span>
+                            <ListItem className='center' onClick={closeMenu}>
+                                <Link href="#projects">
+                                    <AnchorTag>
+                                        <IoBriefcaseOutline></IoBriefcaseOutline>
+                                        <span>Projects</span>
+                                    </AnchorTag>
+                                </Link>
                             </ListItem>
                         </List>
                         <List>
-                            <ListItem className='center'>
-                                <HiOutlineDocumentText></HiOutlineDocumentText>
-                                <span>Resume</span>
+                            <ListItem className='center' onClick={closeMenu}>
+                                <Link href="#reumse">
+                                    <AnchorTag>
+                                        <HiOutlineDocumentText></HiOutlineDocumentText>
+                                        <span>Resume</span>
+                                    </AnchorTag>
+                                </Link>
                             </ListItem>
                         </List>
                         <List>
-                            <ListItem className='center'>
-                                <MdOutlineContactMail></MdOutlineContactMail>
-                                <span>Contact</span>
+                            <ListItem className='center' onClick={closeMenu}>
+                                <Link href="#contact">
+                                    <AnchorTag>
+                                        <MdOutlineContactMail></MdOutlineContactMail>
+                                        <span>Contact</span>
+                                    </AnchorTag>
+                                </Link>
                             </ListItem>
                         </List>
                     </NavContainer>
@@ -127,14 +151,30 @@ margin:0px;
     &:hover{
         cursor:pointer;
         text-decoration:underline;
-        & span{
-            
+        & span{            
         }
     }
     & span{
         margin-left:10px;
     }
 `;
+const AnchorTag = styled.a`
+    display:flex;
+    text-decoration: none!important;
+    color:white;
+    &:hover{
+        cursor:pointer;
+        text-decoration: underline !important;
+    }
+`;
 export default Menu;
+
+
+
+
+
+
+
+
 
 

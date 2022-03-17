@@ -22,38 +22,10 @@ const About = ()=>{
     );
 }
 
-// 
-//     display: grid;
-//     grid-template-columns: 100%;
-//     grid-template-rows: auto;
-//     grid-template-areas: 
-//     "InterestInWebDevelopment"
-//     "Education"
-//     "Skills";
-//     @media (min-width: 768px){
-//         grid-template-columns: 50%;
-//         grid-template-areas:"InterestInWebDevelopment Education"
-//                             ". Skills";
-//     }
-// 
-
 const AboutContainer = styled.section`
-    // height:100%;
     display:inline-block;
-    // background-color:black;
-    // color:white;
     padding-top:10px;
     padding-bottom:90px;
-    // padding-left:10%;
-    // padding-right:10%;
-    // @media (min-width: 600px){
-    //     padding-left:5%;
-    //     padding-right:5%;
-    // }
-    // @media (min-width: 1000px){
-    //     padding-left:5%;
-    //     padding-right:5%;
-    // }
 `;
 const AboutWrapper = styled.div`
 `;
