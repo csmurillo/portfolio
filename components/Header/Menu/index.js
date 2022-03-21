@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { AiOutlineMenu } from "react-icons/ai";
 import { IoClose } from "react-icons/io5";
@@ -21,6 +21,28 @@ const Menu = ()=>{
         console.log('close menu');
         setActiveMenu(false);
     };
+    useEffect(()=>{
+        if(activeMenu){
+            document.body.style.overflow="hidden";
+        }
+        else{
+            document.body.style.overflow="unset";
+        }
+    },[activeMenu])
+
+    useEffect(()=>{
+        function windowSize(){
+            if(window.innerWidth>768){
+                setActiveMenu(false);
+            }
+        }
+        window.addEventListener('resize',windowSize);
+
+        return ()=>{
+            window.removeEventListener('resize',windowSize);
+        };
+    },[]);
+
     return(
         <>
             <MenuContainer className='align-right'>
@@ -33,59 +55,59 @@ const Menu = ()=>{
                 <MobileNav>
                     <MobileNavTitleContainer>
                         <MobileNavTitle className='center'>
-                            Portfolio
+                            Menu
                         </MobileNavTitle>
                     </MobileNavTitleContainer>
                     <NavContainer>
                         <List>
-                            <ListItem className='center' onClick={closeMenu}>
-                                <Link href="#home">
-                                    <AnchorTag>
-                                        <IoHomeOutline></IoHomeOutline>
-                                        <span>Home</span>
-                                    </AnchorTag>
-                                </Link>
-                            </ListItem>
+                            <Link href="#home">
+                                <ListItem className='center' onClick={closeMenu}>
+                                        <AnchorTag>
+                                            <IoHomeOutline></IoHomeOutline>
+                                            <span>Home</span>
+                                        </AnchorTag>
+                                </ListItem>
+                            </Link>
                         </List>
                         <List>
-                            <ListItem className='center' onClick={closeMenu}>
-                                <Link href="#about">
-                                    <AnchorTag>
-                                        <SiAboutdotme></SiAboutdotme>
-                                        <span>Abouts</span>
-                                    </AnchorTag>
-                                </Link>
-                            </ListItem>
+                            <Link href="#about">
+                                <ListItem className='center' onClick={closeMenu}>
+                                    
+                                        <AnchorTag>
+                                            <SiAboutdotme></SiAboutdotme>
+                                            <span>About</span>
+                                        </AnchorTag>
+                                </ListItem>
+                            </Link>
                         </List>
                         <List>
-                            <ListItem className='center' onClick={closeMenu}>
-                                <Link href="#projects">
-                                    <AnchorTag>
-                                        <IoBriefcaseOutline></IoBriefcaseOutline>
-                                        <span>Projects</span>
-                                    </AnchorTag>
-                                </Link>
-                            </ListItem>
+                            <Link href="#projects">
+                                <ListItem className='center' onClick={closeMenu}>
+                                        <AnchorTag>
+                                            <IoBriefcaseOutline></IoBriefcaseOutline>
+                                            <span>Projects</span>
+                                        </AnchorTag>
+                                </ListItem>
+                            </Link>
                         </List>
                         <List>
-                            <ListItem className='center' onClick={closeMenu}>
-                                <Link href="#reumse">
-                                    <AnchorTag>
-                                        <HiOutlineDocumentText></HiOutlineDocumentText>
-                                        <span>Resume</span>
-                                    </AnchorTag>
-                                </Link>
-                            </ListItem>
+                            <Link href="#contact">
+                                <ListItem className='center' onClick={closeMenu}>
+                                        <AnchorTag>
+                                            <MdOutlineContactMail></MdOutlineContactMail>
+                                            <span>Contact</span>
+                                        </AnchorTag>
+                                </ListItem>
+                            </Link>
                         </List>
                         <List>
-                            <ListItem className='center' onClick={closeMenu}>
-                                <Link href="#contact">
-                                    <AnchorTag>
-                                        <MdOutlineContactMail></MdOutlineContactMail>
-                                        <span>Contact</span>
-                                    </AnchorTag>
-                                </Link>
+                            <AnchorTag href="./resume/angelm-resume.pdf"
+                                    target="_blank">
+                            <ListItem className='center'>
+                                    <HiOutlineDocumentText></HiOutlineDocumentText>
+                                    <span>Resume</span>
                             </ListItem>
+                            </AnchorTag>
                         </List>
                     </NavContainer>
                 </MobileNav>
@@ -116,6 +138,7 @@ top:0;left:0;
 position:absolute;
 display:flex;
 flex-direction:column;
+background-color: rgb(0, 0, 14);
 display: ${props => props.active ? 'flex':'none'};
 @media (min-width: 768px) {
     display:none!important;

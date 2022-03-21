@@ -44,13 +44,13 @@ const Projects = ()=>{
                                     </LeftProjectInfo>
                                     <RightProjectInfo>
                                         <LinksGroup>
-                                            <LiveSiteExternalLink className='center'>
+                                            <LiveSiteExternalLink target="_blank" href='https://pixel-art-demo.herokuapp.com/' className='center'>
                                                 <div>
                                                     <ExternalLinkLogo><RiExternalLinkLine></RiExternalLinkLine></ExternalLinkLogo>
                                                     <div className='center'><LiveSite>Live Site</LiveSite></div>
                                                 </div>
                                             </LiveSiteExternalLink>
-                                            <CodeExternalLink className='center'>
+                                            <CodeExternalLink target="_blank" href='https://github.com/csmurillo/PixelArt' className='center'>
                                                 <div>
                                                     <ExternalLinkLogo><RiCodeSSlashFill></RiCodeSSlashFill></ExternalLinkLogo>
                                                     <div className='center'><Code>Code</Code></div>
@@ -82,13 +82,13 @@ const Projects = ()=>{
                                     </LeftProjectInfo>
                                     <RightProjectInfo>
                                         <LinksGroup>
-                                            <LiveSiteExternalLink className='center'>
+                                            <LiveSiteExternalLink target="_blank" href='https://tictactoe-online-demo.herokuapp.com/' className='center'>
                                                 <div>
                                                     <ExternalLinkLogo><RiExternalLinkLine></RiExternalLinkLine></ExternalLinkLogo>
                                                     <div className='center'><LiveSite>Live Site</LiveSite></div>
                                                 </div>
                                             </LiveSiteExternalLink>
-                                            <CodeExternalLink className='center'>
+                                            <CodeExternalLink target="_blank" href='https://github.com/csmurillo/TicTacToe' className='center'>
                                                 <div>
                                                     <ExternalLinkLogo><RiCodeSSlashFill></RiCodeSSlashFill></ExternalLinkLogo>
                                                     <div className='center'><Code>Code</Code></div>
@@ -121,13 +121,13 @@ const Projects = ()=>{
                                     </LeftProjectInfo>
                                     <RightProjectInfo>
                                         <LinksGroup>
-                                            <LiveSiteExternalLink className='center'>
+                                            <LiveSiteExternalLink target="_blank" href='https://csmurillo.github.io/frontend-mentor-sunnyside-agency' className='center'>
                                                 <div>
                                                     <ExternalLinkLogo><RiExternalLinkLine></RiExternalLinkLine></ExternalLinkLogo>
                                                     <div className='center'><LiveSite>Live Site</LiveSite></div>
                                                 </div>
                                             </LiveSiteExternalLink>
-                                            <CodeExternalLink className='center'>
+                                            <CodeExternalLink target="_blank" href='https://github.com/csmurillo/frontend-mentor-sunnyside-agency' className='center'>
                                                 <div>
                                                     <ExternalLinkLogo><RiCodeSSlashFill></RiCodeSSlashFill></ExternalLinkLogo>
                                                     <div className='center'><Code>Code</Code></div>
@@ -198,14 +198,17 @@ display:flex;
 justify-content: space-between;
 `;
 const LeftProjectInfo= styled.div`
-width:55%;`;
-const RightProjectInfo=styled.div``;
+width:48%;`;
+const RightProjectInfo=styled.div`
+`;
 const LinksGroup = styled.div`
 display:flex;
 align-items:flex-end;
 // height:100%;
 `;
 const LiveSiteExternalLink=styled.a`
+    text-decoration:none;
+    color:black;
     border: 1px solid lightgray;
     border-radius: 5px;
     padding: 10px;
@@ -221,6 +224,8 @@ font-size:2em;`;
 const LiveSite =styled.div`
 font-size:.6em;`;
 const CodeExternalLink=styled.a`
+    text-decoration:none;
+    color:black;
     box-sizing: border-box;
     position:relative;
     border: 1px solid lightgray;

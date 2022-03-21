@@ -12,8 +12,8 @@ import {ReactComponent as HerokuLogo} from '../../../../public/images/programmin
 import {ReactComponent as BootstrapLogo} from '../../../../public/images/programminglogos/bootstrap.svg';
 
 const Skills = ()=>{
-    const [iconHeight,setIconHeight]=useState(35);
-    const [iconWidth,setIconWidth]=useState(35);
+    const [iconHeight,setIconHeight]=useState(30);
+    const [iconWidth,setIconWidth]=useState(30);
 
     return (
         <SkillsContainer className='subsection-container'>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useRef} from 'react';
 import styled from 'styled-components';
 import Header from './Header';
 import Home from './Sections/Home';
@@ -6,7 +6,6 @@ import About from './Sections/About';
 import Projects from './Sections/Projects';
 import Contact from './Sections/Contact';
 import Footer from './Footer';
-
 const Layout = ({children})=>{
     return(
         <LayoutContainer>
@@ -30,7 +29,7 @@ const Wrap = styled.div`
 const LayoutContainer = styled.div`
     width:100%; height:100%;
     min-height:650px;
-    background-image:url('./images/portfolio-background-2.jpg');
+    background-image:url('./images/background.jpg');
     background-size: cover;
     background-position:center;
     @media (max-width: 768px) {

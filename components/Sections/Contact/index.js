@@ -2,13 +2,14 @@ import React, { useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import styled from 'styled-components';
 
+
 const Contact = ()=>{
     const form = useRef();
 
     const sendEmail = (e) => {
         e.preventDefault();
     
-        emailjs.sendForm('service_tj2qykh', 'template_1po7r86', form.current, 'Wx1ednw5xGQwywo5f')
+        emailjs.sendForm(process.env.SERVICEEMAILJS, process.env.TEMPLAYEEMAILJS, form.current, process.env.KEYEMAILJS)
           .then((result) => {
               console.log(result.text);
           }, (error) => {
@@ -53,8 +54,10 @@ const Contact = ()=>{
 }
 
 const ContactContainer = styled.section`
-height:100%;
-background-image:url('./images/portfolio-background-2-flip.jpg');
+    max-height:800px;
+    padding-bottom:10%;
+    height:100%;
+    background-image:url('./images/reverse-background.jpg');
     background-size: cover;
     background-position:center;
 `;
@@ -77,16 +80,21 @@ color:white;
 width:100%;
 `;
 const ContactFormGroup = styled.div`
+padding-top:10px;
+padding-bottom:10px;
 width:100%;
 display:inline-block;
 `;
-const ContactLabelInput = styled.label``;
+const ContactLabelInput = styled.label`
+margin-bottom:10px;`;
 const ContactInput = styled.input`
+font-size:1em;
 margin:0;
-padding:0;
-width:100%;
+padding:5px 2% 5px 2%;
+width:96%;
 `;
 const ContactTextArea = styled.textarea`
+font-size:1.2em;
 margin:0;
 padding:0;
 width:100%;

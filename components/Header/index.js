@@ -5,6 +5,7 @@ import { IoIosArrowDown } from "react-icons/io";
 
 import Menu from './Menu';
 import Link from 'next/link';
+import {HiOutlineDocumentText} from "react-icons/hi";
 
 const Header = ()=>{
     return(
@@ -12,11 +13,6 @@ const Header = ()=>{
             <Menu></Menu>
             <NavContainer className='align-right'>
                 <List>
-                    {/* <ListItem>
-                        <SearchIconContainer>
-                            <p><AiOutlineSearch></AiOutlineSearch></p>
-                        </SearchIconContainer>
-                    </ListItem> */}
                     <ListItem>
                         <Link href="#home"><AnchorTag><p>Home</p></AnchorTag></Link>
                     </ListItem>
@@ -27,14 +23,23 @@ const Header = ()=>{
                         <Link href="#projects"><AnchorTag><p>Projects</p></AnchorTag></Link>
                     </ListItem>
                     <ListItem>
-                        <Link href="#resume"><AnchorTag><p>Resume</p></AnchorTag></Link>
-                    </ListItem>
-                    <ListItem>
                         <Link href="#contact"><AnchorTag><p>Contact</p></AnchorTag></Link>
                     </ListItem>
                     <SeparatorContainer className="center">
                         <Separator></Separator>
                     </SeparatorContainer>
+                    <ListItem>
+                        <AnchorTag href="./resume/angelm-resume.pdf"
+                            target="_blank"
+                            >
+                                <ResumeGroup>
+                                    <p>Resume</p>
+                                    <span>
+                                        <HiOutlineDocumentText></HiOutlineDocumentText>
+                                    </span>
+                                </ResumeGroup>
+                        </AnchorTag>
+                    </ListItem>
                     <ListItem>
                         <AnchorTag href="https://github.com/csmurillo"><p>Github <AiFillGithub></AiFillGithub></p></AnchorTag>
                     </ListItem>
@@ -80,6 +85,16 @@ const AnchorTag = styled.a`
         cursor:pointer;
         text-decoration: underline !important;
     }
+`;
+const ResumeGroup =styled.div`
+display:flex;
+& span{
+    margin-left:.2em;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
 `;
 const SearchIconContainer = styled.div`
     cursor:pointer;
